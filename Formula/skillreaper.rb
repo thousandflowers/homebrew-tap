@@ -1,27 +1,27 @@
 class Skillreaper < Formula
   desc "Evidence-based pruning for your AI agent stack"
   homepage "https://github.com/thousandflowers/skillreaper"
-  version "0.1.3"
+  version "0.2.0"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/thousandflowers/skillreaper/releases/download/v#{version}/skillreaper_darwin_amd64.tar.gz"
-    sha256 "e42ea697aa9562a01286b2055443065ef773d676bd611b723c1d814188896f7b"
+    sha256 "c5e7f69f5fe6ef5c57f08e9f236f4a4a67899ba192425e62990999bac8aadc5d"
   end
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/thousandflowers/skillreaper/releases/download/v#{version}/skillreaper_darwin_arm64.tar.gz"
-    sha256 "cc8ddc0773e2bade4dbd55061c010f61ffcdedd698eaf62c7aa843f92207fefd"
+    sha256 "5ea59dd61bf6832e27370b9c2297721d1975184daec8a837d9a07e469ea846f0"
   end
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/thousandflowers/skillreaper/releases/download/v#{version}/skillreaper_linux_amd64.tar.gz"
-    sha256 "cc8ddc0773e2bade4dbd55061c010f61ffcdedd698eaf62c7aa843f92207fefd"
+    sha256 "5ea59dd61bf6832e27370b9c2297721d1975184daec8a837d9a07e469ea846f0"
   end
 
   if OS.linux? && Hardware::CPU.arm?
     url "https://github.com/thousandflowers/skillreaper/releases/download/v#{version}/skillreaper_linux_arm64.tar.gz"
-    sha256 "cc8ddc0773e2bade4dbd55061c010f61ffcdedd698eaf62c7aa843f92207fefd"
+    sha256 "5ea59dd61bf6832e27370b9c2297721d1975184daec8a837d9a07e469ea846f0"
   end
 
   def install
