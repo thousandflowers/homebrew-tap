@@ -1,8 +1,8 @@
 class Canary < Formula
   desc "Pixel-art fatigue bird that lives in your shell prompt"
   homepage "https://github.com/thousandflowers/canary"
-  url "https://github.com/thousandflowers/canary/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "5b5f642a2c243a4f70cc5b004e95d361e0037a610393078dfb9b62d0b066ca57"
+  url "https://github.com/thousandflowers/canary/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "91b1bee240fbe2e1001d5786dde48107ebfb3d5fad9d3e3890f2895ccb215d66"
   license "MIT"
 
   def install
