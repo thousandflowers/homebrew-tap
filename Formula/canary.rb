@@ -1,12 +1,12 @@
 class Canary < Formula
   desc "Pixel-art fatigue bird that lives in your shell prompt"
   homepage "https://github.com/thousandflowers/canary"
-  url "https://github.com/thousandflowers/canary/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "3170060808b81cabc96937218e089d080dc4960e3802b5028329016ad9945e49"
+  url "https://github.com/thousandflowers/canary/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "5b5f642a2c243a4f70cc5b004e95d361e0037a610393078dfb9b62d0b066ca57"
   license "MIT"
 
   def install
-    pkgshare.install "canary.sh", "canary.fish"
+    pkgshare.install "canary.sh", "canary.fish", "canary-statusline.sh"
     doc.install "README.md", "demo.tape"
   end
 
