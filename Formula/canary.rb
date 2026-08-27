@@ -1,8 +1,8 @@
 class Canary < Formula
   desc "Pixel-art fatigue bird for your shell prompt and Claude Code's status line"
   homepage "https://github.com/thousandflowers/canary"
-  url "https://github.com/thousandflowers/canary/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "7358712c2bc216f4ac2ffea3d125f2b0d8295ead53149f622fc6ca33164f35e2" # shasum -a 256 of the v0.6.0 tarball
+  url "https://github.com/thousandflowers/canary/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "d6e9baefb9557ec61705a14804cce290713c4fb5bbfaac768ab9281d71c07341" # shasum -a 256 of the v0.7.0 tarball
   license "MIT"
 
   def install
@@ -12,6 +12,11 @@ class Canary < Formula
     # — and failed outright offline or behind a proxy.
     pkgshare.install "canary-statusline.sh", "canary.sh", "canary.fish",
                      "install.sh", "uninstall.sh"
+    # The phrase corpus, beside the script on purpose: the statusline looks for
+    # ~/.canary/phrases and then for a phrases/ dir next to itself. Ship without
+    # it and the loader finds neither, skips itself, and the bird is mute for
+    # every brew user while every test still passes.
+    pkgshare.install "phrases"
     doc.install "README.md"
   end
 
@@ -34,6 +39,13 @@ class Canary < Formula
     %w[canary-statusline.sh canary.sh canary.fish install.sh uninstall.sh].each do |f|
       assert_path_exists pkgshare/f
     end
+    assert_path_exists pkgshare/"phrases/en/states/dead.txt"
+
+    # and the bird can actually reach the corpus and speak. Asserting the files
+    # exist is not the same assertion, and the weaker one is what let v0.7.0
+    # nearly ship with the phrase system inert.
+    assert_match "the canary is quiet.",
+                 shell_output("/bin/bash #{pkgshare}/canary-statusline.sh preview --state dead")
 
     # Hermetic Claude Code mode: an empty transcript_path fixture plus
     # CANARY_STATE_FILE/CANARY_HISTORY_FILE pointed at testpath keep this from
