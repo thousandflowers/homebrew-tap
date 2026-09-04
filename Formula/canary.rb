@@ -5,21 +5,21 @@
 class Canary < Formula
   desc "Pixel-art fatigue bird for your shell prompt and Claude Code's status line"
   homepage "https://github.com/thousandflowers/canary"
-  version "1.0.0"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/thousandflowers/canary/releases/download/v1.0.0/canary_darwin_amd64.tar.gz"
-      sha256 "1bc0d6426c885d6329545474650ecb1e83d458f5f25e796bb83912fb42623902"
+      url "https://github.com/thousandflowers/canary/releases/download/v1.1.0/canary_darwin_amd64.tar.gz"
+      sha256 "c6a3994c30c2d07bcdebc9828b44fabf4b64d122fc2d904734425247f21e401b"
 
       define_method(:install) do
         bin.install "canary"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/thousandflowers/canary/releases/download/v1.0.0/canary_darwin_arm64.tar.gz"
-      sha256 "322b7f73bc8f1f0fc77c75cc65bc110929ef37ff452fb8e5cb0dea5e72fea3d0"
+      url "https://github.com/thousandflowers/canary/releases/download/v1.1.0/canary_darwin_arm64.tar.gz"
+      sha256 "86efd41e6ef41a9867af308b25919832c408f462356f741e3fb2521b4cac27c5"
 
       define_method(:install) do
         bin.install "canary"
@@ -29,15 +29,15 @@ class Canary < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/thousandflowers/canary/releases/download/v1.0.0/canary_linux_amd64.tar.gz"
-      sha256 "7b69856060fd9d428fa27fee3b2ba0e6ec36a2f9e24d5710581dc27b8836f56b"
+      url "https://github.com/thousandflowers/canary/releases/download/v1.1.0/canary_linux_amd64.tar.gz"
+      sha256 "2baefef369ac5daf0456d1d41c366928cbf4564d9ab29f21e0aee41f3adbb73f"
       define_method(:install) do
         bin.install "canary"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/thousandflowers/canary/releases/download/v1.0.0/canary_linux_arm64.tar.gz"
-      sha256 "d8ee0599ee44c487c8d0cbc6862f16e84bf535bc7b4b6f58a39d87bc9528805b"
+      url "https://github.com/thousandflowers/canary/releases/download/v1.1.0/canary_linux_arm64.tar.gz"
+      sha256 "89e76f97813561d8f554f80c98dc154960dac2a9a87134911401a49673a45419"
       define_method(:install) do
         bin.install "canary"
       end
